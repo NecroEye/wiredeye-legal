@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Data Deletion Request - WiredEye</title>
+  <style>
+    :root { --fg:#0b1220; --muted:#4b5563; --bg:#ffffff; --card:#f8fafc; --border:#e5e7eb; }
+    body{ margin:0; font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif; background:var(--bg); color:var(--fg); }
+    .wrap{ max-width:900px; margin:0 auto; padding:24px; }
+    .card{ background:var(--card); border:1px solid var(--border); border-radius:14px; padding:18px; }
+    h1{ margin:0 0 10px; font-size:28px; }
+    h2{ margin:22px 0 10px; font-size:18px; }
+    p,li{ line-height:1.6; }
+    .muted{ color:#4b5563; }
+    a{ color:#2563eb; }
+    code{ background:#eef2ff; padding:2px 6px; border-radius:8px; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>Data Deletion Request</h1>
+    <p class="muted">WiredEye — Muratcan Gözüm</p>
+
+    <div class="card">
+      <p>
+        If you contacted WiredEye support by email and want your support emails or related personal data
+        deleted, you can request deletion by emailing:
+        <a href="mailto:gozummuratcan@gmail.com?subject=WiredEye%20Data%20Deletion%20Request">gozummuratcan@gmail.com</a>
+      </p>
+
+      <h2>How to request deletion</h2>
+      <ol>
+        <li>Send an email with the subject line <code>WiredEye Data Deletion Request</code>.</li>
+        <li>Use the same email address you previously used to contact support, if possible.</li>
+        <li>Include enough detail for us to identify your prior support request.</li>
+      </ol>
+
+      <h2>What can be deleted</h2>
+      <ul>
+        <li>Your support email address</li>
+        <li>Your support email content</li>
+        <li>Attachments you previously sent for support purposes</li>
+      </ul>
+
+      <h2>What may be retained</h2>
+      <p>
+        Limited information may be retained where required by law, for security, fraud prevention,
+        abuse prevention, or to establish, exercise, or defend legal claims.
+      </p>
+
+      <h2>Timeframe</h2>
+      <p>
+        Requests are reviewed and processed within a reasonable time after verification.
+      </p>
+    </div>
+  </div>
+</body>
+</html>
