@@ -20,83 +20,124 @@
 <body>
   <div class="wrap">
     <h1>Privacy Policy</h1>
-    <p class="muted">Effective date: 24 February 2026</p>
+    <p class="muted">Effective date: 26 February 2026</p>
 
     <div class="card">
       <p>
         This Privacy Policy explains how <strong>WiredEye</strong> (“the App”) handles information.
-        The App is developed and provided by <strong>Muratcan Gözüm</strong> (“I”, “me”).
+        The App is developed and provided by <strong>Muratcan Gözüm</strong> (“I”, “me”, “my”).
       </p>
 
       <h2>Summary</h2>
       <ul>
         <li>The App primarily processes monitoring data <strong>on your device</strong>.</li>
-        <li>By default, we do <strong>not</strong> sell your data and do <strong>not</strong> share your monitoring logs with third parties.</li>
-        <li>If you contact support by email, we receive the email content and address for support purposes.</li>
+        <li>By default, I do <strong>not</strong> sell your data and do <strong>not</strong> share your monitoring logs with third parties for advertising.</li>
+        <li>If you contact support by email, I receive your email address, message content, and any attachments you send.</li>
+        <li>Some core monitoring features may require app/package visibility and Android platform features such as <code>VpnService</code> and, where available, profile-related interoperability.</li>
       </ul>
 
-      <h2>Information the App may process (on-device)</h2>
+      <h2>Information the App may process on-device</h2>
       <p>
-        Depending on features you use, the App may process and display monitoring-related information locally,
-        such as:
+        Depending on the features you use, the App may process and display monitoring-related information locally on your device,
+        including:
       </p>
       <ul>
-        <li>App/package identifiers related to network usage (e.g., which app generated traffic)</li>
-        <li>Network endpoints and metadata (e.g., IP/host, ports, protocol, timestamps)</li>
-        <li>Traffic volume statistics (bytes, throughput, packet rate)</li>
-        <li>Filters/search terms you enter inside the App</li>
+        <li>App/package identifiers related to network usage</li>
+        <li>Installed app visibility information needed to map observed traffic to apps on the device</li>
+        <li>Network endpoints and metadata, such as IP/host, ports, protocol, and timestamps</li>
+        <li>Traffic volume statistics, such as bytes, throughput, and packet rate</li>
+        <li>Filters, searches, and view preferences you enter inside the App</li>
       </ul>
-      <p class="muted">
-        Note: The App is designed as a monitoring tool. It is your responsibility to use it only on devices
-        and networks you are authorized to monitor.
+
+      <h2>How platform permissions and Android features may be used</h2>
+
+      <h3>App/package visibility</h3>
+      <p>
+        To provide app-level monitoring context, WiredEye may inspect package visibility on your device to determine
+        which installed apps correspond to observed network activity. This information is used to power user-facing
+        monitoring features inside the App, such as showing app-related traffic context, and is not used for advertising.
       </p>
 
-      <h2>Information we collect</h2>
-      <p><strong>Support emails.</strong> If you choose to contact support, we receive:</p>
+      <h3>VPN-based monitoring</h3>
+      <p>
+        Certain monitoring features may use Android’s <code>VpnService</code> to create a local monitoring tunnel on the device
+        so the App can inspect and present network metadata for the features you enable. This functionality is used for
+        network monitoring and analysis within the App.
+      </p>
+
+      <h3>Work profile / cross-profile support</h3>
+      <p>
+        On supported devices, and only where Android, device configuration, and any applicable administrator policies allow it,
+        WiredEye may support limited profile-related interoperability (for example, personal profile and work profile scenarios)
+        to improve app context and monitoring visibility across profiles. Availability of these features depends on device support,
+        profile configuration, user action, and administrator or OEM restrictions.
+      </p>
+
+      <h2>Information I collect</h2>
+      <p><strong>Support emails.</strong> If you choose to contact support, I receive:</p>
       <ul>
         <li>Your email address</li>
-        <li>The content of your email and any attachments you send</li>
+        <li>The content of your email</li>
+        <li>Any attachments you choose to send</li>
       </ul>
 
       <h2>Information sharing</h2>
       <p>
-        We do not sell personal data. We do not share your monitoring logs with third parties by default.
-        We may share information only when required to comply with applicable laws or enforce our rights.
+        I do not sell personal data. I do not share your monitoring logs with third parties for advertising or marketing.
+        I may disclose information only when reasonably necessary to comply with applicable law, respond to legal requests,
+        protect rights or safety, investigate abuse, or operate and secure the App.
       </p>
 
       <h2>Third-party services</h2>
       <p>
-        Currently, the App does not require third-party analytics/ads to function.
-        If we add optional third-party services in the future (e.g., crash reporting, analytics),
-        we will update this policy and, where required, request your consent.
+        The App does not require third-party analytics or ads to function.
+        If optional third-party services are added in the future (for example, crash reporting or analytics),
+        this policy will be updated before or when those services are introduced, and consent will be requested where required.
       </p>
 
       <h2>Data retention</h2>
       <ul>
-        <li>Monitoring data displayed by the App is stored locally on your device (if stored at all) and can be cleared from within the App.</li>
-        <li>Support emails are retained as needed to respond and provide support, then deleted when no longer necessary.</li>
+        <li>Monitoring data displayed by the App is primarily processed locally on your device and, if stored, remains on your device unless you choose to export or share it.</li>
+        <li>Locally stored App data can generally be cleared from within the App or by uninstalling the App, subject to normal Android behavior.</li>
+        <li>Support emails are retained only as long as reasonably necessary to respond, troubleshoot, and maintain support records, and are deleted when no longer needed.</li>
       </ul>
+
+      <h2>Your choices</h2>
+      <ul>
+        <li>You can choose whether to contact support by email.</li>
+        <li>You can revoke Android runtime permissions such as notifications through your device settings.</li>
+        <li>If a feature depends on Android platform support, work profile settings, or administrator policy, that feature may be unavailable if those requirements are not met.</li>
+      </ul>
+
+      <h2>Data deletion requests</h2>
+      <p>
+        If you have contacted support and want me to delete support emails or related personal data that I control,
+        you may request deletion by emailing
+        <a href="mailto:gozummuratcan@gmail.com">gozummuratcan@gmail.com</a>.
+        I may retain limited information where required by law, for security purposes, or to establish, exercise, or defend legal claims.
+      </p>
 
       <h2>Security</h2>
       <p>
-        We use reasonable measures to protect information we handle. No method of storage or transmission
-        is 100% secure.
+        I use reasonable administrative and technical measures to protect information I handle.
+        However, no method of storage or transmission is 100% secure.
       </p>
 
       <h2>Children’s privacy</h2>
       <p>
-        The App is not intended for children under 13. We do not knowingly collect personal information from children.
+        The App is not intended for children under 13, and I do not knowingly collect personal information from children.
       </p>
 
       <h2>Changes to this policy</h2>
       <p>
-        We may update this Privacy Policy from time to time. The updated version will be posted at this URL and
-        will include a new effective date.
+        I may update this Privacy Policy from time to time. The updated version will be posted at this URL
+        and will include a new effective date.
       </p>
 
       <h2>Contact</h2>
       <p>
-        For privacy questions, contact: <a href="mailto:gozummuratcan@gmail.com">gozummuratcan@gmail.com</a>
+        For privacy questions or deletion requests, contact:
+        <a href="mailto:gozummuratcan@gmail.com">gozummuratcan@gmail.com</a>
       </p>
     </div>
   </div>
