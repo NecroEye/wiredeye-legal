@@ -11,6 +11,7 @@
     .card{ background:var(--card); border:1px solid var(--border); border-radius:14px; padding:18px 18px; }
     h1{ margin:0 0 10px; font-size:28px; }
     h2{ margin:22px 0 10px; font-size:18px; }
+    h3{ margin:16px 0 8px; font-size:15px; }
     p,li{ line-height:1.6; color:var(--fg); }
     .muted{ color:var(--muted); }
     code{ background:#eef2ff; padding:2px 6px; border-radius:8px; }
@@ -20,23 +21,21 @@
 <body>
   <div class="wrap">
     <h1>Privacy Policy</h1>
-    <p class="muted">Effective date: 26 February 2026</p>
-
+    <p class="muted">Effective date: 28 July 2026</p>
     <div class="card">
       <p>
         This Privacy Policy explains how <strong>WiredEye</strong> (“the App”) handles information.
         The App is developed and provided by <strong>Muratcan Gözüm</strong> (“I”, “me”, “my”).
       </p>
-
       <h2>Summary</h2>
       <ul>
-        <li>The App primarily processes monitoring data <strong>on your device</strong>.</li>
-        <li>By default, I do <strong>not</strong> sell your data and do <strong>not</strong> share your monitoring logs with third parties for advertising.</li>
+        <li>Network monitoring data is processed <strong>on your device</strong>. Your monitoring logs (traffic metadata, hostnames, per-app statistics) are <strong>never uploaded to my servers</strong> and are not shared with third parties.</li>
+        <li>I do <strong>not</strong> sell your personal data.</li>
+        <li>The version of the App distributed on Google Play includes <strong>advertising (Google AdMob)</strong>, <strong>analytics and crash reporting (Firebase)</strong>, optional <strong>Google sign-in</strong>, and an optional <strong>premium subscription</strong>. These services are described below.</li>
         <li>If you contact support by email, I receive your email address, message content, and any attachments you send.</li>
-        <li>Some core monitoring features may require app/package visibility and Android platform features such as <code>VpnService</code> and, where available, profile-related interoperability.</li>
+        <li>Core monitoring features rely on Android platform capabilities such as <code>VpnService</code>, app/package visibility, and optional runtime permissions (notifications, location for Wi-Fi scanning, usage access).</li>
       </ul>
-
-      <h2>Information the App may process on-device</h2>
+      <h2>Information the App processes on-device</h2>
       <p>
         Depending on the features you use, the App may process and display monitoring-related information locally on your device,
         including:
@@ -44,35 +43,103 @@
       <ul>
         <li>App/package identifiers related to network usage</li>
         <li>Installed app visibility information needed to map observed traffic to apps on the device</li>
-        <li>Network endpoints and metadata, such as IP/host, ports, protocol, and timestamps</li>
+        <li>Network endpoints and metadata, such as IP/host, ports, protocol, DNS queries, and timestamps</li>
         <li>Traffic volume statistics, such as bytes, throughput, and packet rate</li>
+        <li>Wi-Fi scan results (nearby network names, signal information) when you use the Wi-Fi scanning feature</li>
+        <li>Clipboard events detected while the App is in the foreground, when you enable the Clipboard Guard feature</li>
+        <li>Permissions granted to installed apps, when you use the Permission Audit feature</li>
         <li>Filters, searches, and view preferences you enter inside the App</li>
       </ul>
-
-      <h2>How platform permissions and Android features may be used</h2>
-
+      <p>
+        This monitoring data stays on your device. Older monitoring records are automatically purged after a limited
+        retention period, and you can remove locally stored data at any time (see “Data retention”).
+      </p>
+      <h2>How platform permissions and Android features are used</h2>
+      <h3>VPN-based monitoring</h3>
+      <p>
+        Monitoring features use Android’s <code>VpnService</code> to create a local monitoring tunnel on the device
+        so the App can inspect and present network metadata for the features you enable. The tunnel is local:
+        your traffic is not routed through any remote VPN server. Monitoring starts only after you explicitly
+        enable it and approve the Android VPN consent dialog, and it runs as a visible foreground service that
+        you can stop at any time from the App or the notification.
+      </p>
       <h3>App/package visibility</h3>
       <p>
         To provide app-level monitoring context, WiredEye may inspect package visibility on your device to determine
         which installed apps correspond to observed network activity. This information is used to power user-facing
         monitoring features inside the App, such as showing app-related traffic context, and is not used for advertising.
       </p>
-
-      <h3>VPN-based monitoring</h3>
+      <h3>Location and nearby Wi-Fi devices</h3>
       <p>
-        Certain monitoring features may use Android’s <code>VpnService</code> to create a local monitoring tunnel on the device
-        so the App can inspect and present network metadata for the features you enable. This functionality is used for
-        network monitoring and analysis within the App.
+        The Wi-Fi scanning feature requires location permission (and, on Android 13+, the
+        <code>NEARBY_WIFI_DEVICES</code> permission) because Android requires them to read Wi-Fi scan results.
+        Location data is used only to enable Wi-Fi scanning on-device; the App does not track your location and
+        does not upload your location or Wi-Fi scan results to my servers.
       </p>
-
-      <h3>Work profile / cross-profile support</h3>
+      <h3>Usage access</h3>
       <p>
-        On supported devices, and only where Android, device configuration, and any applicable administrator policies allow it,
-        WiredEye may support limited profile-related interoperability (for example, personal profile and work profile scenarios)
-        to improve app context and monitoring visibility across profiles. Availability of these features depends on device support,
-        profile configuration, user action, and administrator or OEM restrictions.
+        If you grant the optional usage access permission (<code>PACKAGE_USAGE_STATS</code>), the App uses it to
+        improve attribution of network activity to apps and to show app usage context. This information is processed
+        on-device only.
       </p>
-
+      <h3>Notifications</h3>
+      <p>
+        Notification permission is used to show the monitoring foreground-service notification and related status
+        information. You can revoke it in system settings.
+      </p>
+      <h3>Clipboard Guard</h3>
+      <p>
+        If you enable Clipboard Guard, the App observes clipboard changes while the App is in the foreground in order
+        to warn you about, and optionally auto-clear, sensitive clipboard content. Clipboard contents are processed
+        on-device only and are never transmitted off your device.
+      </p>
+      <h2>Optional account (Google sign-in)</h2>
+      <p>
+        You may optionally sign in with your Google account. Sign-in is handled through Google and Firebase
+        Authentication. When you sign in, I receive basic account information such as your name, email address,
+        and profile picture, which is used to identify your account within the App. Signing in is not required to
+        use the core monitoring features. You can request deletion of your account and associated data at any time
+        (see “Data deletion requests”).
+      </p>
+      <h2>Advertising</h2>
+      <p>
+        The Google Play version of the App shows ads (banner, native, and optional rewarded ads) served by
+        <strong>Google AdMob</strong>. AdMob may collect and process device information such as your advertising ID,
+        IP address, and coarse device data to serve and measure ads, in accordance with Google’s policies.
+      </p>
+      <ul>
+        <li><strong>Consent:</strong> where required (for example in the EEA/UK), a consent form provided by Google’s User Messaging Platform (UMP) is shown before personalized ads are requested. You can change your choice later from the privacy options entry inside the App’s settings, where available.</li>
+        <li><strong>Advertising ID:</strong> you can reset or delete your advertising ID in Android settings (Settings → Google → Ads).</li>
+        <li><strong>Premium:</strong> the premium subscription removes ads.</li>
+        <li>Your monitoring logs are <strong>not</strong> shared with AdMob or any other ad network and are not used for ad targeting.</li>
+      </ul>
+      <h2>Analytics and crash reporting</h2>
+      <p>
+        The Google Play version of the App uses <strong>Firebase Analytics</strong> to understand aggregate feature usage
+        (for example, which screens are used) and <strong>Firebase Crashlytics</strong> to collect crash reports
+        (device model, OS version, crash stack traces). This data helps me improve stability and the product.
+        It does not include your monitoring logs or the content of your network traffic.
+      </p>
+      <h2>Purchases and subscriptions</h2>
+      <p>
+        The App offers an optional premium subscription. Purchases are processed by <strong>Google Play Billing</strong>,
+        and subscription entitlements are managed through <strong>RevenueCat</strong>. I do not receive or store your
+        payment card details; payment is handled by Google Play. RevenueCat processes purchase and entitlement
+        information (such as purchase tokens and an app-scoped identifier) to validate and manage your subscription.
+      </p>
+      <h2>Third-party services</h2>
+      <p>The Google Play version of the App uses the following third-party services, each governed by its own privacy policy:</p>
+      <ul>
+        <li>Google AdMob and User Messaging Platform — <a href="https://policies.google.com/privacy" rel="noopener">Google Privacy Policy</a>, <a href="https://support.google.com/admob/answer/6128543" rel="noopener">AdMob data practices</a></li>
+        <li>Firebase (Authentication, Analytics, Crashlytics) — <a href="https://firebase.google.com/support/privacy" rel="noopener">Firebase Privacy and Security</a></li>
+        <li>Google Play services (billing, in-app review, in-app updates) — <a href="https://policies.google.com/privacy" rel="noopener">Google Privacy Policy</a></li>
+        <li>RevenueCat (subscription management) — <a href="https://www.revenuecat.com/privacy" rel="noopener">RevenueCat Privacy Policy</a></li>
+      </ul>
+      <p>
+        These services do not receive your monitoring logs. An open-source build variant of the App without ads,
+        analytics, or Firebase may also be available; the sections above about advertising, analytics, and sign-in
+        do not apply to that variant.
+      </p>
       <h2>Information I collect</h2>
       <p><strong>Support emails.</strong> If you choose to contact support, I receive:</p>
       <ul>
@@ -80,60 +147,51 @@
         <li>The content of your email</li>
         <li>Any attachments you choose to send</li>
       </ul>
-
       <h2>Information sharing</h2>
       <p>
         I do not sell personal data. I do not share your monitoring logs with third parties for advertising or marketing.
-        I may disclose information only when reasonably necessary to comply with applicable law, respond to legal requests,
-        protect rights or safety, investigate abuse, or operate and secure the App.
+        Third-party service providers listed above process data on my behalf or as independent controllers as described
+        in their policies. Beyond that, I may disclose information only when reasonably necessary to comply with applicable
+        law, respond to legal requests, protect rights or safety, investigate abuse, or operate and secure the App.
       </p>
-
-      <h2>Third-party services</h2>
-      <p>
-        The App does not require third-party analytics or ads to function.
-        If optional third-party services are added in the future (for example, crash reporting or analytics),
-        this policy will be updated before or when those services are introduced, and consent will be requested where required.
-      </p>
-
       <h2>Data retention</h2>
       <ul>
-        <li>Monitoring data displayed by the App is primarily processed locally on your device and, if stored, remains on your device unless you choose to export or share it.</li>
-        <li>Locally stored App data can generally be cleared from within the App or by uninstalling the App, subject to normal Android behavior.</li>
+        <li>Monitoring data is processed and stored locally on your device. Stored monitoring records are automatically purged after a limited retention period (currently about 31 days), and remain on your device unless you choose to export or share them.</li>
+        <li>Locally stored App data can be cleared from within the App or by uninstalling the App, subject to normal Android behavior.</li>
+        <li>Account information (if you sign in) is retained until you delete your account or request deletion.</li>
+        <li>Analytics, crash, and advertising data are retained according to the respective third-party providers’ retention policies.</li>
         <li>Support emails are retained only as long as reasonably necessary to respond, troubleshoot, and maintain support records, and are deleted when no longer needed.</li>
       </ul>
-
       <h2>Your choices</h2>
       <ul>
+        <li>You can start and stop VPN-based monitoring at any time; monitoring never runs without your explicit action.</li>
+        <li>You can choose whether to sign in; core monitoring features work without an account.</li>
+        <li>You can revoke Android runtime permissions such as notifications, location, and usage access through your device settings. Features that depend on a revoked permission may become unavailable.</li>
+        <li>Where a consent form applies, you can review or withdraw your ad-related consent from the privacy options entry in the App’s settings, and you can reset or delete your advertising ID in Android settings.</li>
+        <li>You can manage or cancel the premium subscription at any time through Google Play.</li>
         <li>You can choose whether to contact support by email.</li>
-        <li>You can revoke Android runtime permissions such as notifications through your device settings.</li>
-        <li>If a feature depends on Android platform support, work profile settings, or administrator policy, that feature may be unavailable if those requirements are not met.</li>
       </ul>
-
       <h2>Data deletion requests</h2>
       <p>
-        If you have contacted support and want me to delete support emails or related personal data that I control,
-        you may request deletion by emailing
-        <a href="mailto:gozummuratcan@gmail.com">gozummuratcan@gmail.com</a>.
+        You can request deletion of your account and associated data, support emails, or other personal data that I control
+        by emailing <a href="mailto:gozummuratcan@gmail.com">gozummuratcan@gmail.com</a>.
+        Monitoring data stored on your device can be deleted directly by clearing the App’s data or uninstalling the App.
         I may retain limited information where required by law, for security purposes, or to establish, exercise, or defend legal claims.
       </p>
-
       <h2>Security</h2>
       <p>
-        I use reasonable administrative and technical measures to protect information I handle.
-        However, no method of storage or transmission is 100% secure.
+        I use reasonable administrative and technical measures to protect information I handle, and the App stores
+        its local preferences using encrypted storage. However, no method of storage or transmission is 100% secure.
       </p>
-
       <h2>Children’s privacy</h2>
       <p>
         The App is not intended for children under 13, and I do not knowingly collect personal information from children.
       </p>
-
       <h2>Changes to this policy</h2>
       <p>
         I may update this Privacy Policy from time to time. The updated version will be posted at this URL
         and will include a new effective date.
       </p>
-
       <h2>Contact</h2>
       <p>
         For privacy questions or deletion requests, contact:
